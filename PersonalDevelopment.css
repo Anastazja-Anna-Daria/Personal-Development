@@ -1,0 +1,43 @@
+head{
+    display: none;
+}
+li {
+    list-style-type: none;
+}
+
+body{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1600px;
+    height: auto;
+    overflow-x: hidden;
+}
+
+.boss_logo{
+    width: 1600px;
+    height: 90px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    margin-bottom: 15px;    
+    background-color: rgba(212, 211, 212, 0.879);
+}
+
+.logo{
+    position: absolute;
+    top: 8px;
+    left: 15px;  
+}
+
+.logo_one{
+    width: 75px;
+    height: 75px;   
+}
+
+.about, .career, .price, .bell ,.kont{
+    float: left;
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+}
