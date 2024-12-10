@@ -8,36 +8,100 @@ li {
 body{
     margin-left: auto;
     margin-right: auto;
-    width: 1600px;
+    width: auto;
     height: auto;
     overflow-x: hidden;
 }
 
 .boss_logo{
-    width: 1600px;
+    width: auto;
     height: 90px;
     position: sticky;
-    top: 0;
     z-index: 2;
     margin-bottom: 15px;    
-    background-color: rgba(212, 211, 212, 0.879);
+    background-color: black;
+    margin-top: -16px;
 }
 
 .logo{
     position: absolute;
     top: 8px;
-    left: 15px;  
+    left: 100px;  
 }
 
 .logo_one{
     width: 75px;
     height: 75px;   
+    
 }
 
 .about, .career, .price, .bell ,.kont{
     float: left;
+    left: 850px;
     margin-left: 50px;
     margin-top: 30px;
     margin-bottom: 30px;
     position: relative;
+    color:white;
+    font-size: 22px;
+}
+
+.first_part, .second_part, .thirdes_part , .fifth_part ,.kont_part
+{
+    color: white;
+    text-decoration: none;
+}
+
+.middle_part{
+    position: relative;
+}
+
+.photo{
+    width: 1800px;
+    height:900px;
+    filter: blur(4px) brightness(50%);
+    margin-left: 55px;
+}
+
+
+.arrange_it{
+    position: absolute;
+    top:16%;
+    left: 22%;
+    font-size: 100px;
+    color: white;
+}
+
+.services{
+    position: absolute;
+    top:35%;
+    left: 25%;
+    font-size: 42px;
+    color: white;
+}
+
+.snap{
+    position: absolute;
+    top:50%;
+    left:42%;
+    font-size: 42px;
+    color: white;
+}
+
+.snap_one{
+    background-color: rgb(60, 122, 255);
+    color: white;
+    width: 250px;
+    height: 50px;
+    font-size: 18px;
+    border: none;
+}
+
+.snap_one:hover{
+    background: rgb(2, 7, 103);
+    transition: background 1s;
+}
+
+.w{
+    fill:black;
 }
