@@ -102,6 +102,8 @@ body{
     transition: background 1s;
 }
 
-.w{
-    fill:black;
+.win{
+    fill:rgb(16, 7, 7);
+ 
+
 }
