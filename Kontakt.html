@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PersonalDevelopment</title>
+  <style>
+    /* Сброс базовых стилей */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Общие классы */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3, h4, p {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Кнопка */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #007BFF; /* Синий цвет кнопки */
+      color: #fff;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Шапка (Header) */
+    header {
+      background-color: #000; /* Чёрный фон шапки */
+      color: #fff;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links li a {
+      color: #fff;
+      transition: color 0.3s;
+    }
+    .nav-links li a:hover {
+      color: #ccc;
+    }
+
+    /* Hero-секция (баннер сверху) */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 80vh; /* Высота баннера */
+      background: url('https://via.placeholder.com/1920x1080?text=Hero+Background') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+    .hero-overlay {
+        
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4); /* Тёмная подложка */
+    }
+    .photo{
+    width: 1750px;
+    height:800px;
+    filter: blur(4px) brightness(50%);
+   
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Секция "преимуществ" (иконки/карточки) */
+    .features {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    .features h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .features-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .feature-box {
+      max-width: 300px;
+    }
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    /* Для демонстрации можно использовать pseudo-иконки, например: */
+    .feature-icon::before {
+      content: "★";
+    }
+
+    /* Секция "With our company" */
+    .with-company {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    .with-company h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .card {
+      max-width: 300px;
+      text-align: left;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Галерея (чёрный фон, несколько фото) */
+    .gallery {
+      background-color: #000;
+      color: #fff;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    .gallery h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 3rem 1rem;
+      background-color: #fff;
+      color: #000;
+    }
+    .faq-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+    .faq-text {
+      flex: 1 1 300px;
+    }
+    .faq-text h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .faq-text p {
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .faq-image {
+      flex: 1 1 300px;
+      max-width: 400px;
+    }
+    .faq-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Footer (подвал) */
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .footer-content {
+      margin-bottom: 2rem;
+    }
+    .footer-bottom {
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Шапка сайта -->
+  <header>
+    <nav class="navbar container">
+      <div class="logo">Moja Firma</div>
+      <ul class="nav-links">
+        <li><a href="#hero">Strona glówna</a></li>
+        <li><a href="#features">O nas</a></li>
+        <li><a href="#with-company">Oferta</a></li>
+        <li><a href="#faq">Praca</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero-секция -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay">
+        <img class="photo" src="./Photo/teamwork-3213924_1280.jpg" alt="">
+    </div>
+    <div class="hero-content">
+      <h1>ZATRUDNIAJ Z NAMI!</h1>
+      <p> Profesjonalne uslugi rekrutacyjne dla Twojej firmy.</p>
+      <a href="#features" class="btn">Dowiedz się więcej</a>
+    </div>
+  </section>
+
+  <!-- Секция с преимуществами/иконками -->
+  <section class="features" id="features">
+    <h2> Usługi</h2>
+    <div class="features-container container">
+      <div class="feature-box">
+        <div class="feature-icon"></div>
+        <h3>Profesjonalizm</h3>
+        <p> Pracownicy Personal Development oferują szeroki zakres <br>
+            uslug outsourcingu pracowników.</p>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon"></div>
+        <h3>Zespól</h3>
+        <p>Firma posiada zespól doświadczonych <br>
+            rekruterów z rynku pracy.</p>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon"></div>
+        <h3>Dostosowane</h3>
+        <p>Pracownicy Personal Development oferuje rozwiązania <br>
+            dostosowane i długoterminowe relacje.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Секция "With our company" (3 карточки) -->
+  <section class="with-company" id="with-company">
+    <div class="container">
+      <h2>Oferta specjalna</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200?text=Photo+1" alt="Photo 1">
+          <h3>Outsourcing</h3>
+          <p>Pracownicy Personak Development oferują outsourcing pracowniczy, delegując rekrutację do specjalistów.</p>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200?text=Photo+2" alt="Photo 2">
+          <h3>Rekrutacja</h3>
+          <p>Specjalizujemy się w pozyskiwaniu wykwalifikowanych pracowników na stanowiska.</p>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200?text=Photo+3" alt="Photo 3">
+          <h3>Doradztwo</h3>
+          <p>Oferujemy doradztwo w zarządzaniu kadrami, optymalizując procesy zatrudnienia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Галерея (на чёрном фоне) -->
+  <section class="gallery">
+    <h2>Personal Development</h2>
+    <div class="gallery-container">
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/400x300?text=Trip+1" alt="Trip 1">
+      </div>
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/400x300?text=Trip+2" alt="Trip 2">
+      </div>
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/400x300?text=Trip+3" alt="Trip 3">
+      </div>
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/400x300?text=Trip+4" alt="Trip 4">
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container faq-container">
+      <div class="faq-text">
+        <h2>Personal Development</h2>
+        <h3>Jakie usługi oferuje Pracownicy Personal Development?</h3>
+        <p>Pracownicy PD oferuje kompleksowe usługi outsourcingowe, w tym rekrutację na różne stanowiska, doradztwo w zakresie zarządzania HR oraz wsparcie w administracji pracowniczej.</p>
+        <h3>Jak Pracownicy PD zapewniają odpowiednie dopasowanie kandydatów?</h3>
+        <p>Nasz zespół doświadczonych rekruterów stosuje indywidualne podejście, aby zrozumieć specyficzne potrzeby naszych klientów i skutecznie dopasować kandydatów do tych wymagań.</p>
+        <h3>Jakie branże obsługuje Pracownicy Plus?</h3>
+        <p>Odpowiedź: Specjalizujemy się w rekrutacji dla szerokiego zakresu branż w całej Polsce, odpowiadając na różnorodne potrzeby firm w różnych sektorach.</p>
+        <h3>Jaki jest cel PD w pracy z klientami?</h3>
+        <p>Naszym celem jest nie tylko dostarczenie odpowiednich pracowników, ale także budowanie długoterminowych relacji z naszymi klientami i wspieranie ich w osiąganiu sukcesów biznesowych.</p>
+      </div>
+      <div class="faq-image">
+        <img src="https://via.placeholder.com/400x500?text=FAQ+Image" alt="FAQ Image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (подвал) -->
+  <footer id="kontakt">
+    <div class="footer-content">
+      <p>Skontaktuj się z nami i wzmocnij swój zespół!</p>
+      <a href="#" class="btn">Kontakt</a>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2023 w0hfdp dev. Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
