@@ -46,11 +46,36 @@ body{
     font-size: 22px;
 }
 
+
+
+
 .first_part, .second_part, .thirdes_part , .fifth_part ,.kont_part
 {
     color: white;
     text-decoration: none;
 }
+
+.kont_part:hover{
+    color: rgb(60, 122, 255);
+}
+
+.first_part:hover{
+    color: rgb(60, 122, 255);
+}
+
+
+.second_part:hover{
+    color: rgb(60, 122, 255);
+}
+
+.thirdes_part:hover{
+    color: rgb(60, 122, 255); 
+}
+.fifth_part:hover{
+    color: rgb(60, 122, 255); 
+}
+
+
 
 .middle_part{
     position: relative;
@@ -58,7 +83,7 @@ body{
 
 .photo{
     width: 1800px;
-    height:900px;
+    height:800px;
     filter: blur(4px) brightness(50%);
     margin-left: 55px;
 }
